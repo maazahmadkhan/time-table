@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Timetable App</title>
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="manifest" href="manifest.json" />
+  <meta http-equiv="Cache-control" content="public" />
+  <meta name="theme-color" content="#2196F3"/>
+</head>
+<body>
+  <div class="container">
+    <h1>Timetable</h1>
+    <form id="task-form">
+      <input type="text" id="task-input" placeholder="Task name" required />
+      <input type="time" id="time-input" required />
+      <button type="submit">Add Task</button>
+    </form>
+    <ul id="task-list"></ul>
+  </div>
+
+  <dialog id="confirm-dialog">
+    <form method="dialog">
+      <p>Are you sure you want to delete this task?</p>
+      <menu>
+        <button value="cancel">Cancel</button>
+        <button value="confirm">Delete</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <script src="script.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
+</body>
+</html>
